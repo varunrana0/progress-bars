@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --border-color: #339af0;
+  --border-empty: #e9ecef;
+  --background-color: #adb5bd;
+}
+
+body {
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: var(--background-color);
+}
+
+.container {
+  max-width: 100%;
+  width: 400px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.progress-line {
+  position: absolute;
+  width: 0%;
+  background-color: var(--border-color);
+  height: 4px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.2rem;
+  position: relative;
+}
+
+.progress-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background: var(--border-empty);
+  z-index: -1;
+}
+
+.circle {
+  background: #fff;
+  height: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 3px solid var(--border-empty);
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.4s ease-in-out 0.2s;
+}
+
+.circle.active {
+  border-color: var(--border-color);
+}
+/* ****************************
+
+button for click or worrk as active button
+
+******************************* */
+.btn {
+  padding: 8px 30px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  background: var(--border-color);
+  cursor: pointer;
+  color: #fff;
+  margin: 10px;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+.btn:disabled {
+  cursor: not-allowed;
+  background: gray;
+}
